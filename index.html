@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>GameSwap 360</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+
+<body>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Button used to open the contact form - fixed at the bottom of the page */
+        .open-button {
+            background-color: #000000;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            opacity: 0.8;
+            bottom: 40%;
+            position: absolute;
+            border-radius: 150px;
+            right: 67%;
+            width: 280px;
+        }
+
+        .floating {
+            animation-name: moveRight;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 30px;
+            margin-top: 110px;
+        }
+
+        .floating1 {
+            animation-name: floating;
+            right: 60%;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 20px;
+            margin-top: 370px;
+        }
+
+        .floating2 {
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 20px;
+            margin-top: 370px;
+        }
+
+        .floating3 {
+            animation-name: floatingDown;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 20px;
+            margin-top: 370px;
+        }
+
+        .floating4 {
+            animation-name: fadeIn;
+            animation-duration: 2s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 20px;
+            margin-top: 370px;
+        }
+
+        .floating5 {
+            animation-name: floatinDown;
+            animation-duration: 5s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+            margin-left: 20px;
+            margin-top: 370px;
+        }
+
+        @keyframes floating {
+            from {
+                transform: translate(0, 0px);
+            }
+
+            65% {
+                transform: translate(0, 15px);
+            }
+
+            to {
+                transform: translate(0, -0px);
+            }
+        }
+
+        @keyframes floatingDown {
+            from {
+                background-color: blue;
+            }
+
+            65% {
+                transform: translate(0, 15px);
+            }
+
+            to {
+                background-color: red;
+            }
+        }
+
+        @keyframes floatinDown {
+            from {
+                background-color: violet
+            }
+
+            65% {
+                transform: translate(0, 15px);
+            }
+
+            to {
+                background-color: green;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes moveRight {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(100px);
+            }
+        }
+
+        /* The popup form - hidden by default */
+        .form-popup {
+            display: none;
+            position: absolute;
+            bottom: 70;
+            right: 50%;
+
+            z-index: 9;
+
+        }
+
+        /* Add styles to the form container */
+        .form-container {
+            max-width: 300px;
+            padding: 10px;
+            background-color: #fff59d;
+        }
+
+        /* Full-width input fields */
+        .form-container input[type=text],
+        .form-container input[type=password] {
+            width: 100%;
+            padding: 15px;
+            margin: 5px 0 22px 0;
+            border: none;
+            background: #f1f1f1;
+        }
+
+        /* When the inputs get focus, do something */
+        .form-container input[type=text]:focus,
+        .form-container input[type=password]:focus {
+            background-color: #ddd;
+            outline: none;
+        }
+
+        /* Set a style for the submit/login button */
+        .form-container .btn {
+            background-color: black;
+            color: white;
+            padding: 16px 20px;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+            margin-bottom: 10px;
+            opacity: 0.8;
+        }
+
+        /* Add a red background color to the cancel button */
+        .form-container .cancel {
+            background-color: red;
+        }
+
+        /* Add some hover effects to buttons */
+        .form-container .btn:hover,
+        .open-button:hover {
+            opacity: 1;
+        }
+
+        .footer-wrapper {
+            margin: 0;
+            width: 1100px;
+            margin: 0 auto;
+
+        }
+
+        .single-footer {
+            width: 22%;
+            float: left;
+            text-align: left;
+            color: #ffffff;
+        }
+
+        .single-footer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .single-footer ul a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px
+        }
+
+        .single-footer p {
+            width: 70%;
+        }
+
+        footer {
+            width: 100%;
+            height: 150px;
+            position: fixed;
+            bottom: 0;
+            z-index: -1;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+
+        }
+    </style>
+    <div class="header">
+        <img src="images/gameSwap.jpg" alt="logo" height="50%" />
+    </div>
+    <div class="header-right">
+
+        <a class="active" href="index.html" style="text-decoration: none; color: black;">Home</a>
+        <a href="trade.html" style="text-decoration: none; color: black;">Trade</a>
+        <a href="about.html" style="text-decoration: none; color: black;">About</a>
+        <a href="#contact" style="text-decoration: none; color: black;">Features</a>
+        <a href="#login" onclick="openFormL()" style="text-decoration: none; color: black;">LogIn</a>
+        <a href=""><i class="fa fa-search" fa-2x style="text-decoration: none; color: black;"></i>
+
+        </a>
+    </div>
+    <div class="area"></div>
+    <nav class="main-menu">
+        <ul>
+
+            <li>
+                <a href=""><i class="fa fa-home" fa-2x></i>
+                    <span class="nav-logo">
+                        <img src="images/gameSwap.jpg" alt="logo" />
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-home" fa-2x></i>
+                    <span class="nav-text">
+                        Dashboard
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href=""><i class="fa fa-laptop" fa-2x></i>
+                    <span class="nav-text">
+                        Stars Components
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href=""><i class="fa fa-list" fa-2x></i>
+                    <span class="nav-text">
+                        Forms
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href=""><i class="fa fa-folder-open" fa-2x></i>
+                    <span class="nav-text">
+                        Pages
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-bar-chart-o" fa-2x></i>
+                    <span class="nav-text">
+                        Graph and Statistics
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-font" fa-2x></i>
+                    <span class="nav-text">
+                        Quotes
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-table" fa-2x></i>
+                    <span class="nav-text">
+                        Tables
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-map-marker" fa-2x></i>
+                    <span class="nav-text">
+                        Tables
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-info" fa-2x></i>
+                    <span class="nav-text">
+                        Documentation
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+        <ul class="logout">
+            <li>
+                <a href="">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    </div>
+
+    </div>
+    <div class="floating"
+        style="height: 20px; width: 20px;border-radius: 100%;  position:absolute; bottom: 30%;right: 80%; background: rgb(0,125,0)">
+    </div>
+    <div class="floating1" style="height: 20px; width: 20px;border-radius: 100%;  position:absolute;right: 60%;">
+        <img src="images/console.jpg" alt="logo" style="float:right; position:absolute; right:50%; bottom: 50%" ; />
+    </div>
+    <div class="floating2"
+        style="height: 20px; width: 20px;border-radius: 100%;  position:absolute; bottom: 65%;right: 80%; background: rgb(0,125,0)">
+    </div>
+    <div class="floating3"
+        style="height: 20px; width: 20px;border-radius: 100%;  position:absolute; bottom: 45%;right: 90%; background: rgb(98,125,255)">
+    </div>
+    <div class="floating4"
+        style="height: 20px; width: 20px;border-radius: 100%;  position:absolute; top: 20%; right: 69%; background: rgb(0,5,0)">
+    </div>
+    <div class="floating5"
+        style="height: 20px; width: 20px;border-radius: 100%;  position:absolute;  bottom:60%; right: 66%; background: rgb(119, 21, 75)">
+    </div>
+    <img src="images/main.jpg" alt="logo" style="float:right; position:absolute; right:0%; bottom: 30%" ;
+        height="60%" />
+    <img src="images/end2end.jpg" alt="logo" style="float:right; position:absolute; left:13%; bottom: 50%" ; />
+    <button class="open-button" onclick="openForm()">JOIN NOW ></button>
+    <div class="form-popup" id="myForm">
+        <form action="index.html" class="form-container">
+            <h1>
+                <center>SIGN UP </center>
+            </h1>
+            <h4>
+                <center> Join our community fast growing game trading platform now in your area in your area giving
+                    endless gaming experience</center>
+            </h4>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Sign Up</button>
+
+            <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+
+    </div>
+
+    <div class="form-popup" id="loginIN">
+        <form action="afterLogin.html" class="form-container">
+            <h1>
+                <center>SIGN IN </center>
+            </h1>
+            <h4>
+                <center> Enter your login credientials to access your profile and view other features offered by
+                    GameSwap360</center>
+            </h4>
+
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="button" class="btn cancel" onclick="closeFormL()">Close</button>
+        </form>
+
+    </div>
+
+    <footer>
+        <div class="footer-wrapper">
+            <div class="single-footer">
+                <h2>GameSwap 360</h2>
+                <p>
+                    <img src="images/fot.jpg" alt="">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptas consequuntur repellat aut eum
+                    ullam provident qui illo debitis ab reiciendis? Aspernatur qui adipisci excepturi vitae accusamus
+                    rem error consectetur ab.
+                </p>
+            </div>
+
+            <div class="single-footer">
+                <h2>Navigation </h2>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="trade.html">TRADE</a></li>
+                    <li><a href="feature.html">FEATURES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+
+                </ul>
+            </div>
+            <div class="single-footer">
+                <h2>Get Help</h2>
+                <ul>
+                    <li><a href="">Order Status</a></li>
+                    <li><a href="">Delivery</a></li>
+                    <li><a href="">Refunds</a></li>
+                    <li><a href="">Terms</a></li>
+                </ul>
+            </div>
+            <div class="single-footer">
+                <h2>Get Help</h2>
+                <ul>
+                    <li><a href="">Order Status</a></li>
+                    <li><a href="">Delivery</a></li>
+                    <li><a href="">Refunds</a></li>
+                    <li><a href="">Terms</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+
+        function openFormL() {
+            document.getElementById("loginIN").style.display = "block";
+        }
+
+        function closeFormL() {
+            document.getElementById("loginIN").style.display = "none";
+        }
+    </script>
+
+
+</body>
+
+</html>

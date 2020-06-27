@@ -1,0 +1,400 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Side Bar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .footer-wrapper {
+            margin: 0;
+            width: 1100px;
+            margin: 0 auto;
+
+        }
+
+        .single-footer {
+            width: 22%;
+            float: left;
+            text-align: left;
+            color: #ffffff;
+        }
+
+        .single-footer ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .single-footer ul a {
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            font-size: 12px
+        }
+
+        .single-footer p {
+            width: 70%;
+        }
+
+        footer {
+            width: 100%;
+            height: 150px;
+            position: fixed;
+            bottom: 0;
+            z-index: -1;
+            background-color: black;
+            margin: 0;
+            padding: 0;
+
+        }
+
+        h1 {
+            right: 50%;
+            bottom: 80%;
+            position: absolute;
+            color: black;
+        }
+
+        .para {
+            position: absolute;
+            right: 60%;
+            bottom: 90%;
+            position: absolute;
+            color: black;
+        }
+
+        input[type=text] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: none;
+            background-color: #3CBC8D;
+            color: white;
+        }
+
+        .row {
+            display: -ms-flexbox;
+            /* IE10 */
+            display: flex;
+            -ms-flex-wrap: wrap;
+            /* IE10 */
+            flex-wrap: wrap;
+            margin: 0 -16px;
+        }
+
+        .col-25 {
+            -ms-flex: 25%;
+            /* IE10 */
+            flex: 25%;
+        }
+
+        .col-50 {
+            -ms-flex: 50%;
+            /* IE10 */
+            flex: 50%;
+        }
+
+        .col-75 {
+            -ms-flex: 75%;
+            /* IE10 */
+            flex: 75%;
+        }
+
+        .col-25,
+        .col-50,
+        .col-75 {
+            padding: 0 16px;
+        }
+
+        .container {
+            background-color: #f2f2f2;
+            padding: 5px 20px 15px 20px;
+            border: 1px solid lightgrey;
+            width: 200%;
+            height: 0%;
+            position: absolute;
+            bottom: =10%;
+            right: =50%;
+            border-radius: 3px;
+        }
+
+        input[type=text] {
+            margin-bottom: 20px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        label {
+            margin-bottom: 10px;
+            height: 10%;
+            display: block;
+        }
+
+        .icon-container {
+            margin-bottom: 20px;
+            padding: 7px 0;
+            font-size: 24px;
+        }
+
+        .btn {
+            background-color: black;
+            color: white;
+            padding: 12px;
+            margin: 10px 0;
+            border: none;
+            width: 100%;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 17px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        a {
+            color: #2196F3;
+        }
+
+        hr {
+            border: 1px solid lightgrey;
+        }
+
+        span.price {
+            float: right;
+            color: grey;
+        }
+
+        /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+        @media (max-width: 800px) {
+            .row {
+                flex-direction: column-reverse;
+            }
+
+            .col-25 {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <img src="images/gameSwap.jpg" alt="logo" />
+    </div>
+    <div class="header-right">
+
+        <a class="active" href="index.html" style="text-decoration: none; color: black;">Home</a>
+        <a href="trade.html" style="text-decoration: none; color: black;">Trade</a>
+        <a href="about.html" style="text-decoration: none; color: black;">About</a>
+        <a href="feature.html" style="text-decoration: none; color: black;">Features</a>
+        <a href="profile.html" style="text-decoration: none; color: black;">Profile</a>
+        <a href=""><i class="fa fa-search" fa-2x style="text-decoration: none; color: black;"></i>
+
+        </a>
+    </div>
+
+    <div class="image">
+        <img src="images/main.jpg" alt="logo" style="float:right; position:absolute; right:0%; bottom: 30%" ;
+            height="60%" />
+    </div>
+
+    <div class="para">
+        <p>
+
+            <h2>Add A GAME</h2>
+            <div class="row">
+                <div class="col-75">
+                    <div class="container">
+                        <form action="/action_page.php">
+
+                            <div class="row">
+                                <div class="col-50">
+                                    <label for="fname"> GAME NAME</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="GTA V">
+                                    <label for="email"> CATEGORY</label>
+                                    <input type="text" id="text" name="email" placeholder="Action">
+                                    <label for="adr"> PLATFORM</label>
+                                    <input type="text" id="adr" name="address" placeholder="Play Station IV">
+                                    <label for="city"></i> AGE</label>
+                                    <input type="text" id="city" name="city" placeholder="17+">
+                                    <label for="birthday">Release Date:</label>
+                                    <input type="date" id="birthday" name="birthday">
+                                    <div class="row">
+                                        <div class="col-50">
+                                        </div>
+                                        <div class="col-50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-50">
+                                    <div class="icon-container">
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-50">
+                                        </div>
+                                        <div class="col-50">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <input type="submit" value="Add to Collection" class="btn">
+                        </form>
+                    </div>
+                </div>
+                <div class="col-25">
+                </div>
+            </div>
+            <div>
+
+            </div>
+
+        </p>
+
+    </div>
+    <nav class="main-menu">
+        <ul>
+
+            <li>
+                <a href=""><i class="fa fa-" fa-2x></i>
+                    <span class="nav-logo">
+                        <img src="images/gameSwap.jpg" alt="logo" />
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa fa-home" fa-2x></i>
+                    <span class="nav-text">
+                        HOME
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="profile.html"><i class="fa fa-laptop" fa-2x></i>
+                    <span class="nav-text">
+                        PROFILE
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="addGame.html"><i class="fa fa-list" fa-2x></i>
+                    <span class="nav-text">
+                        ADD A GAME
+                    </span>
+
+                </a>
+            </li>
+            <li class="has-subnav">
+                <a href="viewCollection.html"><i class="fa fa-folder-open" fa-2x></i>
+                    <span class="nav-text">
+                        VIEW COLLECTION
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href="articleBy.html"><i class="fa fa-table" fa-2x></i>
+                    <span class="nav-text">
+                        VIEW ARTICLE BY ARTICLE
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href="previous.html"><i class="fa fa-map-marker" fa-2x></i>
+                    <span class="nav-text">
+                        VIEW PREVIOUS TRADES
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href="pending.html"><i class="fa fa-bar-chart-o" fa-2x></i>
+                    <span class="nav-text">
+                        VIEW PENDING TRADES
+                    </span>
+
+                </a>
+            </li>
+            <li>
+                <a href=""><i class="fa fa-info" fa-2x></i>
+                    <span class="nav-text">
+                        Documentation
+                    </span>
+
+                </a>
+            </li>
+        </ul>
+        <ul class="logout">
+            <li>
+                <a href="index.html">
+                    <i class="fa fa-power-off fa-2x"></i>
+                    <span class="nav-text">
+                        Logout
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    </div>
+    </div>
+    <footer>
+        <div class="footer-wrapper">
+            <div class="single-footer">
+                <h2>GameSwap 360</h2>
+                <p>
+                    <img src="images/fot.jpg" alt="">
+                </p>
+            </div>
+
+            <div class="single-footer">
+                <h2>Navigation </h2>
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="trade.html">TRADE</a></li>
+                    <li><a href="feature.html">FEATURES</a></li>
+                    <li><a href="about.html">ABOUT</a></li>
+
+                </ul>
+            </div>
+            <div class="single-footer">
+                <h2>Get Help</h2>
+                <ul>
+                    <li><a href="">Order Status</a></li>
+                    <li><a href="">Delivery</a></li>
+                    <li><a href="">Refunds</a></li>
+                    <li><a href="">Terms</a></li>
+                </ul>
+            </div>
+            <div class="single-footer">
+                <h2>Get Help</h2>
+                <ul>
+                    <li><a href="">Order Status</a></li>
+                    <li><a href="">Delivery</a></li>
+                    <li><a href="">Refunds</a></li>
+                    <li><a href="">Terms</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+</body>
+
+</html>
