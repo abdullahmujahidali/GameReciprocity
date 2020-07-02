@@ -2,6 +2,8 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>GameSwap 360</title>
     <link rel="icon" type="image/ico" href="images/gameSwap.JPG" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -90,7 +92,7 @@
             -ms-flex-wrap: wrap;
             /* IE10 */
             flex-wrap: wrap;
-            margin: 0 -16px;
+            margin: -10 -16px;
         }
 
         .col-25 {
@@ -207,7 +209,7 @@
     </div>
 
     <div class="image">
-        <img src="images/main.JPG" alt="logo" style="float:right; position:absolute; right:0%; bottom: 30%" ;
+        <img src="images/afterL.GIF" alt="logo" style="float:right; position:absolute; right:0%; bottom: 30%" ;
             height="60%" />
     </div>
 
@@ -215,11 +217,19 @@
         <p>
 
             <h2>Add A GAME</h2>
-            <div class="row">
-                <div class="col-75">
-                    <div class="container">
-                        <form action="/action_page.php">
-
+            <div class="row-40">
+                <div class="col-65">
+                    <div class="container" style="height: 100%;">
+                        <form action="/profile.html" style="width: 550px;
+                        height: 300px;
+                        margin: auto;
+                        position: relative;">
+                            <div style=" border-radius: 15px;
+                            background-color: #f2f2f2;
+                            padding: 40px;
+                            position: relative;
+                            left:-20%;
+                            ">
                             <div class="row">
                                 <div class="col-50">
                                     <label for="fname"> GAME NAME</label>
@@ -253,6 +263,7 @@
 
                             </div>
                             <input type="submit" value="Add to Collection" class="btn">
+                            </div>
                         </form>
                     </div>
                 </div>
